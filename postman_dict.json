@@ -45,8 +45,8 @@
   "getSpecCollections": {
     "elementType": "collection",
     "limit": 1,
-    "specId": "11289221-spec-id-example",
-    "cursor": "eyJpZCI6IjEyMzQ1In0"
+    "specId": "0f6b8338-3d10-4aa1-9d5c-264ab0a665b7",
+    "cursor": "nextCursor"
   },
   "generateCollection": {
     "elementType": "collection",
