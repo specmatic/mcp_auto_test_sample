@@ -251,7 +251,7 @@
     "include": "mocks:deactivated"
   },
   "publishMock": {
-    "mockId": "KCLQV"
+    "mockId": "9791eaa7-c5d9-4040-b50c-429f3c90a4b2"
   },
   "putEnvironment": {
     "environmentId": "74b59b60-b497-4636-83ca-110b25559b5e",
@@ -277,7 +277,7 @@
     "collectionUid": "11289221-b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb"
   },
   "updateMock": {
-    "mockId": "specmatic-mock-id",
+    "mockId": "9791eaa7-c5d9-4040-b50c-429f3c90a4b2",
     "mock": {
       "name": "Specmatic Mock",
       "environment": "SIT",

@@ -20,7 +20,7 @@ specmatic/specmatic mcp test \
 --url https://mcp.postman.com/minimal \
 --bearer-token PMAK-68b82fe8750aba0001c4c047-db12bc86e442be312c20d3e176f33374f3 \
 --dictionary-file dict.json \
---skip-tools createCollectionResponse,createMock,createSpecFile,generateSpecFromCollection,getTaggedEntities
+--skip-tools createCollectionResponse,createMock,createSpecFile,generateSpecFromCollection,getTaggedEntities,publishMock,getSpecCollections,getStatusOfAnAsyncApiTask,syncCollectionWithSpec,syncSpecWithCollection
 
 ./generate_specmatic_report.sh
 ```
