@@ -1,15 +1,23 @@
 {
+  "SPECMATIC_CONSTANTS": {
+    "WORKSPACE_ID": "14c2db94-fa11-494d-8e6b-31fdca14185c",
+    "COLLECTION_ID": "11289221-b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb",
+    "SPEC_ID": "a47f8bd4-37ac-4b67-9b68-0952da95df8f",
+    "MOCK_ID": "9791eaa7-c5d9-4040-b50c-429f3c90a4b2",
+    "ENVIRONMENT_ID": "74b59b60-b497-4636-83ca-110b25559b5e",
+    "TEAM_ID": "999928"
+  },
   "createCollectionResponse": {
-    "collectionId": "11289221-b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb",
+    "collectionId": "$(COLLECTION_ID)",
     "name": "products_api_updated",
     "requestId": "11289221-305a04e2-a6fb-4266-9287-ec38c4b91c52"
   },
   "getGeneratedCollectionSpecs": {
     "elementType": "spec",
-    "collectionUid": "11289221-b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb"
+    "collectionUid": "$(COLLECTION_ID)"
   },
   "createEnvironment": {
-    "workspace": "14c2db94-fa11-494d-8e6b-31fdca14185c",
+    "workspace": "$(WORKSPACE_ID)",
     "environment": {
       "name": "Production Environment",
       "values": [
@@ -29,7 +37,7 @@
     }
   },
   "updateWorkspace": {
-    "workspaceId": "14c2db94-fa11-494d-8e6b-31fdca14185c",
+    "workspaceId": "$(WORKSPACE_ID)",
     "workspace": {
       "name": "products_api_updated",
       "description": "This is an updated description for the workspace.",
@@ -38,7 +46,7 @@
     }
   },
   "getAllSpecs": {
-    "workspaceId": "14c2db94-fa11-494d-8e6b-31fdca14185c",
+    "workspaceId": "$(WORKSPACE_ID)",
     "cursor": "",
     "limit": 1
   },
@@ -64,12 +72,12 @@
   "generateSpecFromCollection": {
     "elementType": "spec",
     "type": "OPENAPI:3.0",
-    "collectionUid": "11289221-b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb",
+    "collectionUid": "$(COLLECTION_ID)",
     "name": "products_api_spec",
     "format": "JSON"
   },
   "createSpec": {
-    "workspaceId": "14c2db94-fa11-494d-8e6b-31fdca14185c",
+    "workspaceId": "$(WORKSPACE_ID)",
     "name": "products_api_spec",
     "type": "OPENAPI:3.0",
     "files": [
@@ -80,9 +88,9 @@
     ]
   },
   "createMock": {
-    "workspace": "14c2db94-fa11-494d-8e6b-31fdca14185c",
+    "workspace": "$(WORKSPACE_ID)",
     "mock": {
-      "collection": "11289221-b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb"
+      "collection": "$(COLLECTION_ID)"
     }
   },
   "createCollection": {
@@ -111,15 +119,15 @@
         }
       ]
     },
-    "workspace": "14c2db94-fa11-494d-8e6b-31fdca14185c"
+    "workspace": "$(WORKSPACE_ID)"
   },
   "getCollection": {
-    "collectionId": "11289221-b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb",
+    "collectionId": "$(COLLECTION_ID)",
     "access_key": "PMAT-01K4C6Y917MGSK1NX9DNR9AD62",
     "model": "minimal"
   },
   "getCollections": {
-    "workspace": "14c2db94-fa11-494d-8e6b-31fdca14185c",
+    "workspace": "$(WORKSPACE_ID)",
     "name": "dummy"
   },
   "putCollection": {
@@ -159,7 +167,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"name\": \"Test Product\", \"price\": 99.99}"
+              "raw": "{\"name\": \"Test Product\", \"category\": \"gadget\", \"price\": 99.99}"
             },
             "url": {
               "raw": "https://api.example.com/products",
@@ -188,10 +196,10 @@
   "duplicateCollection": {
     "collectionId": "b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb",
     "suffix": "_copy",
-    "workspace": "14c2db94-fa11-494d-8e6b-31fdca14185c"
+    "workspace": "$(WORKSPACE_ID)"
   },
   "createCollectionRequest": {
-    "collectionId": "11289221-b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb",
+    "collectionId": "$(COLLECTION_ID)",
     "name": "Delete Product",
     "folderId": "11289221-ff53ce11-aded-44e2-8545-f6ae64ad3292"
   },
@@ -211,38 +219,38 @@
     }
   },
   "getEnvironment": {
-    "environmentId": "74b59b60-b497-4636-83ca-110b25559b5e"
+    "environmentId": "$(ENVIRONMENT_ID)"
   },
   "getEnvironments": {
-    "workspace": "14c2db94-fa11-494d-8e6b-31fdca14185c"
+    "workspace": "$(WORKSPACE_ID)"
   },
   "getMock": {
-    "mockId": "9791eaa7-c5d9-4040-b50c-429f3c90a4b2"
+    "mockId": "$(MOCK_ID)"
   },
   "getMocks": {
-    "teamId": "999928",
-    "workspace": "14c2db94-fa11-494d-8e6b-31fdca14185c"
+    "teamId": "$(TEAM_ID)",
+    "workspace": "$(WORKSPACE_ID)"
   },
   "getSpec": {
-    "specId": "a47f8bd4-37ac-4b67-9b68-0952da95df8f"
+    "specId": "$(SPEC_ID)"
   },
   "getSpecDefinition": {
-    "specId": "a47f8bd4-37ac-4b67-9b68-0952da95df8f"
+    "specId": "$(SPEC_ID)"
   },
   "getSpecFile": {
-    "specId": "a47f8bd4-37ac-4b67-9b68-0952da95df8f",
+    "specId": "$(SPEC_ID)",
     "filePath": "openapi.yaml"
   },
   "getSpecFiles": {
-    "specId": "a47f8bd4-37ac-4b67-9b68-0952da95df8f"
+    "specId": "$(SPEC_ID)"
   },
   "getStatusOfAnAsyncApiTask": {
-    "apiId": "a47f8bd4-37ac-4b67-9b68-0952da95df8f",
+    "apiId": "$(SPEC_ID)",
     "taskId": "11289221-86361ccd-fd8f-4d60-9765-6b1a9562497b",
     "Accept": "application/vnd.api.v10+json"
   },
   "getWorkspace": {
-    "workspaceId": "14c2db94-fa11-494d-8e6b-31fdca14185c",
+    "workspaceId": "$(WORKSPACE_ID)",
     "include": "mocks:deactivated"
   },
   "getWorkspaces": {
@@ -251,10 +259,10 @@
     "include": "mocks:deactivated"
   },
   "publishMock": {
-    "mockId": "9791eaa7-c5d9-4040-b50c-429f3c90a4b2"
+    "mockId": "$(MOCK_ID)"
   },
   "putEnvironment": {
-    "environmentId": "74b59b60-b497-4636-83ca-110b25559b5e",
+    "environmentId": "$(ENVIRONMENT_ID)",
     "environment": {
       "name": "Production Environment Updated",
       "values": [
@@ -269,15 +277,15 @@
     }
   },
   "syncCollectionWithSpec": {
-    "collectionUid": "11289221-b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb",
-    "specId": "a47f8bd4-37ac-4b67-9b68-0952da95df8f"
+    "collectionUid": "$(COLLECTION_ID)",
+    "specId": "$(SPEC_ID)"
   },
   "syncSpecWithCollection": {
-    "specId": "a47f8bd4-37ac-4b67-9b68-0952da95df8f",
-    "collectionUid": "11289221-b4e2512b-ff4e-4b9f-9d8f-1f46182abdfb"
+    "specId": "$(SPEC_ID)",
+    "collectionUid": "$(COLLECTION_ID)"
   },
   "updateMock": {
-    "mockId": "9791eaa7-c5d9-4040-b50c-429f3c90a4b2",
+    "mockId": "$(MOCK_ID)",
     "mock": {
       "name": "Specmatic Mock",
       "environment": "SIT",
@@ -287,13 +295,13 @@
     }
   },
   "updateSpecFile": {
-    "specId": "a47f8bd4-37ac-4b67-9b68-0952da95df8f",
+    "specId": "$(SPEC_ID)",
     "filePath": "openapi.yaml",
     "content": "openapi: 3.0.0\ninfo:\n  title: Products API Updated\n  version: 1.0.1\npaths:\n  /products:\n    get:\n      summary: Get all products\n      responses:\n        '200':\n          description: Successful response",
     "name": "dummy"
   },
   "updateSpecProperties": {
-    "specId": "a47f8bd4-37ac-4b67-9b68-0952da95df8f",
+    "specId": "$(SPEC_ID)",
     "name": "products_api_spec_updated"
   }
 }
