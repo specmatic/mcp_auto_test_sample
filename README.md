@@ -13,6 +13,7 @@ npx @modelcontextprotocol/inspector
 6. Select a tool and provide the required inputs to test the tool
 
 ## Test Postman's remote MCP Server
+- On macOs and Linux, use the following commands:
 ```shell
 docker run -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic" \
 -v "$(pwd)/postman_dict.json:/usr/src/app/dict.json" \
@@ -25,7 +26,34 @@ specmatic/specmatic mcp test \
 ./generate_specmatic_report.sh
 ```
 
+- On Windows PowerShell, use the following commands:
+```shell
+docker run -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic" `
+-v "$(pwd)/postman_dict.json:/usr/src/app/dict.json" `
+specmatic/specmatic mcp test `
+--url https://mcp.postman.com/minimal `
+--bearer-token PMAK-68b82fe8750aba0001c4c047-db12bc86e442be312c20d3e176f33374f3 `
+--dictionary-file dict.json `
+--skip-tools createCollectionResponse,createMock,createSpecFile,generateSpecFromCollection,getTaggedEntities,publishMock,getSpecCollections,getStatusOfAnAsyncApiTask,syncCollectionWithSpec,syncSpecWithCollection
+
+sh ./generate_specmatic_report.sh
+```
+
+- On Windows Command Prompt, use the following commands:
+```shell
+docker run -v "%cd%/build/reports/specmatic:/usr/src/app/build/reports/specmatic" ^
+-v "%cd%/postman_dict.json:/usr/src/app/dict.json" ^
+specmatic/specmatic mcp test ^
+--url https://mcp.postman.com/minimal ^
+--bearer-token PMAK-68b82fe8750aba0001c4c047-db12bc86e442be312c20d3e176f33374f3 ^
+--dictionary-file dict.json ^
+--skip-tools createCollectionResponse,createMock,createSpecFile,generateSpecFromCollection,getTaggedEntities,publishMock,getSpecCollections,getStatusOfAnAsyncApiTask,syncCollectionWithSpec,syncSpecWithCollection
+
+sh ./generate_specmatic_report.sh
+```
+
 ## Test Postman's MCP Server - update mock tool
+- On macOs and Linux, use the following commands:
 ```shell
 docker run -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic" \
 -v "$(pwd)/postman_dict.json:/usr/src/app/dict.json" \
@@ -38,7 +66,34 @@ specmatic/specmatic mcp test \
 ./generate_specmatic_report.sh
 ```
 
+- On Windows PowerShell, use the following commands:
+```shell
+docker run -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic" `
+-v "$(pwd)/postman_dict.json:/usr/src/app/dict.json" `
+specmatic/specmatic mcp test `
+--url https://mcp.postman.com/minimal `
+--bearer-token PMAK-68b82fe8750aba0001c4c047-db12bc86e442be312c20d3e176f33374f3 `
+--dictionary-file dict.json `
+--filter-tools updateMock
+
+sh ./generate_specmatic_report.sh
+```
+
+- On Windows Command Prompt, use the following commands:
+```shell
+docker run -v "%cd%/build/reports/specmatic:/usr/src/app/build/reports/specmatic" ^
+-v "%cd%/postman_dict.json:/usr/src/app/dict.json" ^
+specmatic/specmatic mcp test ^
+--url https://mcp.postman.com/minimal ^
+--bearer-token PMAK-68b82fe8750aba0001c4c047-db12bc86e442be312c20d3e176f33374f3 ^
+--dictionary-file dict.json ^
+--filter-tools updateMock
+
+sh ./generate_specmatic_report.sh
+```
+
 ## Test Postman's MCP Server - create workspace with resiliency testing
+- On macOs and Linux, use the following commands:
 ```shell
 docker run -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic" \
 -v "$(pwd)/postman_dict.json:/usr/src/app/dict.json" \
@@ -52,7 +107,36 @@ specmatic/specmatic mcp test \
 ./generate_specmatic_report.sh
 ```
 
+- On Windows PowerShell, use the following commands:
+```shell
+docker run -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic" `
+-v "$(pwd)/postman_dict.json:/usr/src/app/dict.json" `
+specmatic/specmatic mcp test `
+--url https://mcp.postman.com/minimal `
+--bearer-token PMAK-68b82fe8750aba0001c4c047-db12bc86e442be312c20d3e176f33374f3 `
+--dictionary-file dict.json `
+--filter-tools createWorkspace `
+--enable-resiliency-tests
+
+sh ./generate_specmatic_report.sh
+```
+
+- On Windows Command Prompt, use the following commands:
+```shell
+docker run -v "%cd%/build/reports/specmatic:/usr/src/app/build/reports/specmatic" ^
+-v "%cd%/postman_dict.json:/usr/src/app/dict.json" ^
+specmatic/specmatic mcp test ^
+--url https://mcp.postman.com/minimal ^
+--bearer-token PMAK-68b82fe8750aba0001c4c047-db12bc86e442be312c20d3e176f33374f3 ^
+--dictionary-file dict.json ^
+--filter-tools createWorkspace ^
+--enable-resiliency-tests
+
+sh ./generate_specmatic_report.sh
+```
+
 ## HuggingFace MCP Server
+- On macOs and Linux, use the following commands:
 ```shell
 docker run -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic" \
 -v "$(pwd)/hugging_face_dict.json:/usr/src/app/dict.json" \
@@ -64,7 +148,32 @@ specmatic/specmatic mcp test \
 ./generate_specmatic_report.sh
 ```
 
+- On Windows PowerShell, use the following commands:
+```shell
+docker run -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic" `
+-v "$(pwd)/hugging_face_dict.json:/usr/src/app/dict.json" `
+specmatic/specmatic mcp test `
+--url https://huggingface.co/mcp `
+--dictionary-file dict.json `
+--bearer-token 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
+
+sh ./generate_specmatic_report.sh
+```
+
+- On Windows Command Prompt, use the following commands:
+```shell
+docker run -v "%cd%/build/reports/specmatic:/usr/src/app/build/reports/specmatic" ^
+-v "%cd%/hugging_face_dict.json:/usr/src/app/dict.json" ^
+specmatic/specmatic mcp test ^
+--url https://huggingface.co/mcp ^
+--dictionary-file dict.json ^
+--bearer-token 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
+
+sh ./generate_specmatic_report.sh
+```
+
 ## HuggingFace MCP Server - gr1_flux1_schnell_infer tool
+- On macOs and Linux, use the following commands:
 ```shell
 docker run -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic" \
 -v "$(pwd)/hugging_face_dict.json:/usr/src/app/dict.json" \
@@ -76,4 +185,32 @@ specmatic/specmatic mcp test \
 --enable-resiliency-tests
 
 ./generate_specmatic_report.sh
+```
+
+- On Windows PowerShell, use the following commands:
+```shell
+docker run -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic" `
+-v "$(pwd)/hugging_face_dict.json:/usr/src/app/dict.json" `
+specmatic/specmatic mcp test `
+--url https://huggingface.co/mcp `
+--dictionary-file dict.json `
+--bearer-token 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 `
+--filter-tools gr1_flux1_schnell_infer `
+--enable-resiliency-tests
+
+sh ./generate_specmatic_report.sh
+```
+
+- On Windows Command Prompt, use the following commands:
+```shell
+docker run -v "%cd%/build/reports/specmatic:/usr/src/app/build/reports/specmatic" ^
+-v "%cd%/hugging_face_dict.json:/usr/src/app/dict.json" ^
+specmatic/specmatic mcp test ^
+--url https://huggingface.co/mcp ^
+--dictionary-file dict.json ^
+--bearer-token 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 ^
+--filter-tools gr1_flux1_schnell_infer ^
+--enable-resiliency-tests
+
+sh ./generate_specmatic_report.sh
 ```

@@ -11,13 +11,23 @@ if [ ! -f "$INPUT" ]; then
   echo "❌ File $INPUT not found in current directory."
   exit 1
 fi
+
 if [ ! -f "$SCHEMA" ]; then
   echo "❌ File $SCHEMA not found in current directory."
   exit 1
 fi
 
-/usr/bin/env python3 <<'PYCODE'
-import json, html, datetime
+case "$(uname -s)" in
+  CYGWIN*|MINGW*|MSYS*|MINGW32*|MINGW64*)
+    PYTHON_CMD="python"
+    ;;
+  *)
+    PYTHON_CMD="python3"
+    ;;
+esac
+
+/usr/bin/env $PYTHON_CMD <<'PYCODE'
+import json, html, datetime, os, webbrowser
 
 INPUT = "build/reports/specmatic/mcp_test_report.json"
 SCHEMA = "build/reports/specmatic/tools_schema.json"
@@ -129,7 +139,9 @@ function toggleRow(id) {{
 
 with open(OUTPUT,"w",encoding="utf-8") as f:
     f.write(html_doc)
-print(f"✅ Report written to {OUTPUT}")
-PYCODE
 
-open "$OUTPUT"
+print(f"✅ Report written to {OUTPUT}")
+abs_path = os.path.abspath(OUTPUT)
+webbrowser.open('file://' + abs_path)
+print(f"🌐 Opening report in browser...")
+PYCODE
